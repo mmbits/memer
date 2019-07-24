@@ -1,5 +1,10 @@
 import React from 'react';
 import './App.css';
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+
+
+
 
 class App extends React.Component {
   state={
@@ -22,7 +27,13 @@ class App extends React.Component {
           <input value={text}
             onChange={e=> this.setState({text: e.target.value})}
           />
-          <button disabled={loading || !text} type="submit">Search</button>
+          <Button variant="contained"
+           color="primary" className={classes.button}>
+        Send
+        {/* This Button uses a Font Icon, see the installation instructions in the docs. */}
+        <Icon className={classes.rightIcon}>send</Icon>
+      </Button>
+ 
         </form>
       </div>
     );
